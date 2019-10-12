@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `Linear Digression`,
+    title: `Logistic Digression`,
     author: `Max Van Lyl`,
-    description: `A starter blog demonstrating what Gatsby can do.`,
+    description: `A blog documenting my many stumbles into the unknown.`,
     siteUrl: `https://www.logisticdigression.com/`,
     social: {
       twitter: `redmountaingoat`,
