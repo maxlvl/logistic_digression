@@ -11,7 +11,7 @@ myself often turning to the vendor's API for answers, since even a handful of
 sandbox API endpoints can often give you most, if not all, the answers.
 
 Let's dive into an example. 
-## Context:
+### Context:
 I really, really, really like flaky pastries. I don't know why, but I'm not
 satisfied until the entire table is covered in flakes. We could dig further into this strange flex, but it's pretty irrelevant. Anyway, to maximize my chances of indulging in this preference, I want to know what types of pastries are offered by 3 bakeries that are located closest to my house. Instead of walking over and asking like a normal human being, I decide to find the answer through more devious ways: hitting their baker.... API. ....this problem statement is already falling apart.
 
@@ -39,10 +39,17 @@ Ideally, if I am making a comparison of multiple bakeries and their pastries,
 I might want to share that with my fellow pastry-philes (yes, that's
 a word). Since spreadsheets are cool and all, I want to do that in a CSV file. 
 
+### Problem:
 This leads me to 2 problems:
 - I need to get this JSON data in a CSV format
 - I need to be able to repeat this process with minimal effort.
 
+Normally, this could potentially take me quite some time to write a script to
+parse the json data, filter out the fields I care about and write those to a new
+file (or output them elsewhere). I would need to do this again for each
+vendor, assuming the response data will look different each time. 
+
+### JQ to the rescue:
 This is where [`jq`](https://stedolan.github.io/jq/) comes into play.
 A *"lightweight and flexible command-line JSON processor"*, it basically lets
 you slice and dice up JSON data however you want, with the same ease that `grep`
@@ -70,7 +77,11 @@ see in this case, I created a brand new JSON object with it.
 For more tutorials and the full manual, check out [jq's home
 page](https://stedolan.github.io/jq/)
 
-I did say I wanted the final output to be CSV. That can be done with a very
+Sure, I still need to update the command for each vendor with a different
+response data structure, but that can be done in a matter of seconds once I've
+sufficiently grokked the `jq` syntax. 
+
+Lastly, I did say I wanted the final output to be CSV. That can be done with a very
 quick Python script:
 
 ```
@@ -85,8 +96,6 @@ with open('flaky_pastry_list.csv', 'w') as write_file:
     writer = csv.writer(write_file)
     for row in data:
         writer.writerows(data)
-
-write_file.close()
 ```
 
 And there you have it. I might put together a more real-world example with some
