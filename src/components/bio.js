@@ -18,7 +18,7 @@ const Bio = () => {
       }}
     >
       <p>
-       My daily digressions as I attempt to make sense of things!
+        Hi, I'm <b>Max Van Lyl</b>. Software Engineer at <a href="http://www.freshbooks.com">FreshBooks</a> during the day, working on smaller projects during nights or early mornings. Noob at most things in life. This is where I talk about stuff.
       </p>
     </div>
   )
