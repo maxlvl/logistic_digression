@@ -18,7 +18,8 @@ const Bio = () => {
       }}
     >
       <p>
-        Hi, I'm <b>Max Van Lyl</b>. Software Developer at <a href="http://www.freshbooks.com">FreshBooks</a> during the day, dad in the evenings, building stuff in at night into the early morning. I mostly work with Python and Javascript.
+        Hi, I'm <b>Max Van Lyl</b>. Software Developer at <a href="http://www.freshbooks.com">FreshBooks</a> during the day. Dad in the evenings. Building stuff at night or early mornings. 
+        I mostly work with Python and Javascript.
       </p>
     </div>
   )
