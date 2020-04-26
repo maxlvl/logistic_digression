@@ -61,8 +61,7 @@ it.
 Since all I care about for these bakeries is their pastries and their flake-factor, most of the top-level data is irrelevant to me. I need to dig into the `pastries` array. I can do that with the following command:
 
 ```
-jq -r '.data[] | {"type": .pastries[].name, "flake": .pastries[].flake_factor}'
-bakery.json > baker_filtered.json
+jq -r '.data[] | {"type": .pastries[].name, "flake": .pastries[].flake_factor}' bakery.json > baker_filtered.json
 ```
 The above command will take the entries from the `data` array (`.data[]`) and pass it
 further down the filter. There, I can construct a new JSON object with whatever
